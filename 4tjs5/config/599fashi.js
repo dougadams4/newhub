@@ -167,6 +167,9 @@
                             tout.fillMode = "topSellers";
                         }
                     },
+                    preDisplay: function (tout) {
+                        $(tout.divSelect).parents("table").css("table-layout", "fixed");
+                    },
                     perProduct: function (itemdata) {
                         if (itemdata.salePrice) {
                             itemdata.price = itemdata.salePrice;
@@ -267,6 +270,9 @@
                 rawJS: {
                     preInit: function (tout) {
                         tout.enable = tout.enable && "/Wholesale_ep_72-1.html" == location.pathname;
+                    },
+                    preDisplay: function (tout) {
+                        $(tout.divSelect).parents("table").css("table-layout", "fixed");
                     },
                     perProduct: function (itemdata) {
                         if (itemdata.salePrice) {
